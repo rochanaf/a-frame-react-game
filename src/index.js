@@ -1,6 +1,6 @@
 import 'aframe';
 import 'aframe-animation-component';
-import 'aframe-particle-system-component';
+import 'aframe-mouse-cursor-component';
 import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
@@ -31,8 +31,8 @@ class App extends React.Component {
           position={{x: 0, y: 1.5, z: -0.5}}
         ></Entity>
 
-        <Entity primitive="a-camera">
-          <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
+        <Entity id="camera" camera look-controls-enabled="false" mouse-cursor position="0 1.6 0"> 
+          <Entity id ="cursor" cursor="rayOrigin: mouse; fuse: false" />
         </Entity>
       </Scene>
     );
