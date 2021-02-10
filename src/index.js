@@ -1,11 +1,14 @@
+import aframe from 'aframe';
 import 'aframe';
 import 'aframe-animation-component';
 import 'aframe-mouse-cursor-component';
+import registerClickDrag from 'aframe-click-drag-component';
 import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+registerClickDrag(aframe);
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -26,6 +29,7 @@ class App extends React.Component {
          <Entity primitive="a-plane" color="red" position={{x: 0, y: 5, z: -8}}/>
 
         <Entity id="sphere"
+          click-drag
           geometry={{primitive: 'sphere', radius:0.1}}
           material={{color:'black',opacity: 0.6}}
           position={{x: 0, y: 1.5, z: -0.5}}
