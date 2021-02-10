@@ -8,6 +8,7 @@ import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+require("./components/throwBall.js");
 registerClickDrag(aframe);
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends React.Component {
          <Entity primitive="a-plane" color="red" position={{x: 0, y: 5, z: -8}}/>
 
         <Entity id="sphere"
+          clicked
           click-drag
           geometry={{primitive: 'sphere', radius:0.1}}
           material={{color:'black',opacity: 0.6}}
