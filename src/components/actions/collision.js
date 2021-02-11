@@ -5,7 +5,6 @@ constants.AFRAME.registerComponent('check-collision', {
 
   init: function() {
       var el = this.el;
-      console.log("checkCollision");
       el.sceneEl.addEventListener('ballThrown', function(ev, target){
         var targetPosition = el.object3D.position;
         isCollision(el,targetPosition);

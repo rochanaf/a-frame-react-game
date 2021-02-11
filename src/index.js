@@ -10,7 +10,9 @@ import ReactDOM from 'react-dom';
 
 require("./components/actions/throwBall.js");
 require("./components/actions/collision.js");
+
 require("./components/elements/target.js");
+require("./components/elements/score.js");
 
 // require('aframe-physics-system');
 
@@ -31,8 +33,7 @@ class App extends React.Component {
         <Entity primitive="a-light" type="ambient" color="#445451"/>
         <Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
         <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
-        <Entity text={{id:"score", value: 'Score: ', align: 'center',color:'black',width:'7px'}} position={{x: 0, y: 1, z: -1}}/>
-
+        <Entity id="score" score-component text />
         <Entity id="target" primitive="a-plane" color="red" position={{x: 0, y: 1.5, z: -8}} height="1" width="1"target check-collision/>
         <Entity id="sphere"
           throw-ball
