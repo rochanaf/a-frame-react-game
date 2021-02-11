@@ -9,6 +9,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 require("./components/throwBall.js");
+require('aframe-physics-system');
+
 registerClickDrag(aframe);
 class App extends React.Component {
   constructor(props) {
