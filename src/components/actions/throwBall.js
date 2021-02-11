@@ -5,22 +5,25 @@ constants.AFRAME.registerComponent('throw-ball', {
 
   init: function() {
       var el = this.el;
+
       el.addEventListener('mousedown', function(ev, target){
         console.log("mousedown");
       });
-      el.addEventListener('mouseup', function(ev, target){
+      el.addEventListener('dragend', function(ev, target){
+        // TODO: find alternative to stop firing event multiple times
+        var isChosenEvent = (ev.detail.clientX!=undefined && ev.detail.clientY!=undefined) ;
+        if (isChosenEvent) {
           el.emit('ballThrown');
-          console.log("mouseup");
           updatePosition(el);
               // TODO disable mouseclick after ball is thrown and enable after reset
           resetBall(el);
           emitEvent(el);
-          // TODO check if collision happened
-          // TODO update score
+        }
       });
 }});
 
 function updatePosition(el) {
+  el.object3D.position.x*=constants.BALLMULTIPLIER;
   el.object3D.position.z = constants.INITIALTARGETPOSITIONZ;
 }
 

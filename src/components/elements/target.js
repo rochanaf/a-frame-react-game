@@ -9,7 +9,7 @@ constants.AFRAME.registerComponent('target', {
         //TODO make it faster (0.05)
         t+=constants.TRANSLATION;
         var animation = requestAnimationFrame(animate);
-        el.setAttribute('position', {x:-(Math.sin(t*2))*6,y:constants.INITIALTARGETPOSITIONY,z:constants.INITIALTARGETPOSITIONZ});
+        el.setAttribute('position', {x:-(Math.sin(t))*constants.TARGETMULTIPLIER,y:constants.INITIALTARGETPOSITIONY,z:constants.INITIALTARGETPOSITIONZ});
           el.sceneEl.addEventListener('ballThrown', function(ev, target){
             cancelAnimationFrame(animation);
           });
