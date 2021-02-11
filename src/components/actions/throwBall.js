@@ -1,11 +1,6 @@
-const AFRAME = window.AFRAME;
-const TIMEOUT = 1000;
-const PLANPOSITIONZ = -8;
-const INITIALPOSITIONX= 0;
-const INITIALPOSITIONY= 1.5;
-const INITIALPOSITIONZ= -0.5;
+import * as constants from '../../constants.js';
 
-AFRAME.registerComponent('shootBall', {
+constants.AFRAME.registerComponent('throw-ball', {
 
 
   init: function() {
@@ -26,19 +21,22 @@ AFRAME.registerComponent('shootBall', {
 }});
 
 function updatePosition(el) {
-  el.object3D.position.z = PLANPOSITIONZ;
+  el.object3D.position.z = constants.INITIALTARGETPOSITIONZ;
 }
 
 function resetBall(el) {
   const resetBall = () => {
-    el.object3D.position.set(INITIALPOSITIONX,INITIALPOSITIONY,INITIALPOSITIONZ);
+    el.object3D.position.set(constants.INITIALBALLPOSITIONX,
+                            constants.INITIALBALLPOSITIONY,
+                            constants.INITIALBALLPOSITIONZ
+                            );
   }
-  setTimeout(resetBall,TIMEOUT);
+  setTimeout(resetBall,constants.TIMEOUT);
 }
 
 function emitEvent(el) {
   const emitEvent = () => {
     el.emit('ballReset');
   }
-  setTimeout(emitEvent,TIMEOUT);
+  setTimeout(emitEvent,constants.TIMEOUT);
 }

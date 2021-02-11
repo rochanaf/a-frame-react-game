@@ -1,15 +1,15 @@
-const AFRAME = window.AFRAME;
+import * as constants from '../../constants.js';
 
-AFRAME.registerComponent('target', {
+constants.AFRAME.registerComponent('target', {
     init: function () {
       var el = this.el;
       var t =0;
 
       function animate() {
-        //TODO make it faster
-        t+=0.01;
+        //TODO make it faster (0.05)
+        t+=constants.TRANSLATION;
         var animation = requestAnimationFrame(animate);
-        el.setAttribute('position', {x:-(Math.sin(t*2))*6,y:'1.5',z:'-8'});
+        el.setAttribute('position', {x:-(Math.sin(t*2))*6,y:constants.INITIALTARGETPOSITIONY,z:constants.INITIALTARGETPOSITIONZ});
           el.sceneEl.addEventListener('ballThrown', function(ev, target){
             cancelAnimationFrame(animation);
           });

@@ -34,7 +34,7 @@ class App extends React.Component {
 
          <Entity primitive="a-plane" color="red" position={{x: 0, y: 1.5, z: -8}} target/>
         <Entity id="sphere"
-          shootBall
+          throw-ball
           click-drag
           geometry={{primitive: 'sphere', radius:0.1}}
           material={{color:'black',opacity: 0.6}}

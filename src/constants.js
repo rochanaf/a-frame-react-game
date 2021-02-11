@@ -1,0 +1,14 @@
+export const AFRAME = window.AFRAME;
+
+// SHOOT BALL
+export const TRANSLATION = 0.01;
+export const TIMEOUT = 1000;
+
+// TARGET
+export const INITIALTARGETPOSITIONX = 0;
+export const INITIALTARGETPOSITIONY = 1.5;
+export const INITIALTARGETPOSITIONZ = -8;
+// BALL
+export const INITIALBALLPOSITIONX= 0;
+export const INITIALBALLPOSITIONY= 1.5;
+export const INITIALBALLPOSITIONZ= -0.5;
