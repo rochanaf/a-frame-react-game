@@ -11,7 +11,7 @@ constants.AFRAME.registerComponent('throw-ball', {
       });
       el.addEventListener('dragend', function(ev, target){
         // TODO: find alternative to stop firing event multiple times
-        var isChosenEvent = (ev.detail.clientX!=undefined && ev.detail.clientY!=undefined) ;
+        var isChosenEvent = (ev.detail.clientX!==undefined && ev.detail.clientY!==undefined) ;
         if (isChosenEvent) {
           el.emit('ballThrown');
           updatePosition(el);
