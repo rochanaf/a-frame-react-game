@@ -10,6 +10,7 @@ import ReactDOM from 'react-dom';
 
 require("./components/actions/throwBall.js");
 require("./components/actions/collision.js");
+require("./components/actions/scoreCount.js");
 
 require("./components/elements/target.js");
 require("./components/elements/score.js");
@@ -33,7 +34,7 @@ class App extends React.Component {
         <Entity primitive="a-light" type="ambient" color="#445451"/>
         <Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
         <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
-        <Entity id="score" score-component text />
+        <Entity id="score" score-component score-counter text />
         <Entity id="target" primitive="a-plane" color="red" position={{x: 0, y: 1.5, z: -8}} height="1" width="1"target check-collision/>
         <Entity id="sphere"
           throw-ball

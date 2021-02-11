@@ -17,9 +17,11 @@ function isCollision(el,targetPosition){
 
   if (isCollisionX(targetPosition.x,ballPosition.x) && isCollisionY(targetPosition.y,ballPosition.y)) {
     isCollision = true;
+    console.log("emit:collided");
     el.emit('collided');
   }
   else {
+    console.log("emit:collision fail");
     el.emit('collision-failed');
   }
   return isCollision;
