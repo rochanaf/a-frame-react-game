@@ -21,6 +21,8 @@ constants.AFRAME.registerComponent('start-game', {
       document.getElementById('target').setAttribute('visible','true');
       document.getElementById('score').setAttribute('visible','true');
       document.getElementById('countdown').setAttribute('visible','true');
+      document.getElementById('movesNumber').setAttribute('visible','true');
+
   }
 
   function hideButton() {
