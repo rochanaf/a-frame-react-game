@@ -3606,15 +3606,16 @@
     "duplexer" "^0.1.1"
 
 "handlebars@^4.0.3":
-  "integrity" "sha1-LORISFBTf5yXqAJtU5m5NcTtTtc="
-  "resolved" "https://registry.npmjs.org/handlebars/-/handlebars-4.0.6.tgz"
-  "version" "4.0.6"
+  "integrity" "sha512-1f2BACcBfiwAfStCKZNrUCgqNZkGsAT7UM3kkYtXuLo0KnaVfjKOyf7PRzB6++aK9STyT1Pd2ZCPe3EGOXleXA=="
+  "resolved" "https://registry.npmjs.org/handlebars/-/handlebars-4.7.6.tgz"
+  "version" "4.7.6"
   dependencies:
-    "async" "^1.4.0"
-    "optimist" "^0.6.1"
-    "source-map" "^0.4.4"
+    "minimist" "^1.2.5"
+    "neo-async" "^2.6.0"
+    "source-map" "^0.6.1"
+    "wordwrap" "^1.0.0"
   optionalDependencies:
-    "uglify-js" "^2.6"
+    "uglify-js" "^3.1.4"
 
 "har-validator@~2.0.6":
   "integrity" "sha1-zcvAgYgmWtEZtqWnyKtw7s+10n0="
@@ -5344,6 +5345,11 @@
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz"
   "version" "1.2.0"
 
+"minimist@^1.2.5":
+  "integrity" "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw=="
+  "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz"
+  "version" "1.2.5"
+
 "minimist@~0.0.1", "minimist@0.0.8":
   "integrity" "sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0="
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz"
@@ -5407,6 +5413,11 @@
   "integrity" "sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk="
   "resolved" "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz"
   "version" "0.6.1"
+
+"neo-async@^2.6.0":
+  "integrity" "sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw=="
+  "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
+  "version" "2.6.2"
 
 "new-array@^1.0.0":
   "integrity" "sha1-XbxjnZYerH8an7wacUbsEvKST78="
@@ -5687,7 +5698,7 @@
     "object-assign" "^4.0.1"
     "pinkie-promise" "^2.0.0"
 
-"optimist@^0.6.1", "optimist@~0.6.0", "optimist@~0.6.1":
+"optimist@^0.6.1":
   "integrity" "sha1-2j6nRob6IaGaERwybpDrFaAZZoY="
   "resolved" "https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz"
   "version" "0.6.1"
@@ -5700,6 +5711,14 @@
   "resolved" "https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz"
   "version" "0.3.7"
   dependencies:
+    "wordwrap" "~0.0.2"
+
+"optimist@~0.6.0", "optimist@~0.6.1":
+  "integrity" "sha1-2j6nRob6IaGaERwybpDrFaAZZoY="
+  "resolved" "https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz"
+  "version" "0.6.1"
+  dependencies:
+    "minimist" "~0.0.1"
     "wordwrap" "~0.0.2"
 
 "optionator@^0.8.1", "optionator@^0.8.2":
@@ -7294,6 +7313,11 @@
   "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz"
   "version" "0.5.7"
 
+"source-map@^0.6.1":
+  "integrity" "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g=="
+  "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz"
+  "version" "0.6.1"
+
 "source-map@~0.1.31", "source-map@~0.1.7":
   "integrity" "sha1-wkvBRspRfBRx9drL4lcbK3+eM0Y="
   "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.1.43.tgz"
@@ -7948,14 +7972,21 @@
   "version" "0.7.12"
 
 "uglify-js@^2.6":
-  "integrity" "sha1-RhLAx7qu4rp8SH3kkErhIgefLKg="
-  "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-2.7.5.tgz"
-  "version" "2.7.5"
+  "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-2.7.0.tgz"
+  "version" "2.7.0"
   dependencies:
     "async" "~0.2.6"
     "source-map" "~0.5.1"
     "uglify-to-browserify" "~1.0.0"
     "yargs" "~3.10.0"
+
+"uglify-js@^3.1.4", "uglify-js@3.4.x":
+  "integrity" "sha512-Y2VsbPVs0FIshJztycsO2SfPk7/KAF/T72qzv9u5EpQ4kB2hQoHlhNQTsNyy6ul7lQtqJN/AoWeS23OzEiEFxw=="
+  "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-3.4.10.tgz"
+  "version" "3.4.10"
+  dependencies:
+    "commander" "~2.19.0"
+    "source-map" "~0.6.1"
 
 "uglify-js@~2.7.3":
   "integrity" "sha1-RhLAx7qu4rp8SH3kkErhIgefLKg="
@@ -7976,14 +8007,6 @@
     "optimist" "~0.3.5"
     "source-map" "~0.1.7"
     "uglify-to-browserify" "~1.0.0"
-
-"uglify-js@3.4.x":
-  "integrity" "sha512-Y2VsbPVs0FIshJztycsO2SfPk7/KAF/T72qzv9u5EpQ4kB2hQoHlhNQTsNyy6ul7lQtqJN/AoWeS23OzEiEFxw=="
-  "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-3.4.10.tgz"
-  "version" "3.4.10"
-  dependencies:
-    "commander" "~2.19.0"
-    "source-map" "~0.6.1"
 
 "uglify-to-browserify@~1.0.0":
   "integrity" "sha1-bgkk1r2mta/jSeOabWMoUKD4grc="
@@ -8419,6 +8442,11 @@
   "integrity" "sha1-HxSv6/Zt/fD+9V79NxhO+9CMKLY="
   "resolved" "https://registry.npmjs.org/word-wrapper/-/word-wrapper-1.0.7.tgz"
   "version" "1.0.7"
+
+"wordwrap@^1.0.0":
+  "integrity" "sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus="
+  "resolved" "https://registry.npmjs.org/wordwrap/-/wordwrap-1.0.0.tgz"
+  "version" "1.0.0"
 
 "wordwrap@~0.0.2":
   "integrity" "sha1-o9XabNXAvAAI03I0u68b7WMFkQc="

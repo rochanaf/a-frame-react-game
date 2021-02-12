@@ -1,4 +1,5 @@
 {
+  "homepage": "http://rochanaf.github.io/aframe-react-game",
   "name": "aframe-react-game",
   "version": "3.0.1",
   "description": "Boilerplate for building virtual reality experiences with A-Frame and React.",
@@ -41,10 +42,6 @@
     "aframe-react",
     "webvr"
   ],
-  "bugs": {
-    "url": "https://github.com/rochanaf/aframe-react-game/issues"
-  },
-  "homepage": "http://rochanaf.github.io/aframe-react-game",
   "devDependencies": {
     "gh-pages": "^0.12.0"
   }

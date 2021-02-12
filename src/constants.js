@@ -1,7 +1,7 @@
 export const AFRAME = window.AFRAME;
 
 // SHOOT BALL
-export const TRANSLATION = 0.01;
+export const TRANSLATION = 0.05;
 export const TIMEOUT = 1000;
 
 // TARGET
