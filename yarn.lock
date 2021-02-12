@@ -68,6 +68,13 @@
   dependencies:
     "deep-equal" "^1.0.1"
 
+"aframe-colorwheel-component@^1.2.1":
+  "integrity" "sha1-kDOynBOncgs9b+CW12ZOx4sGVEQ="
+  "resolved" "https://registry.npmjs.org/aframe-colorwheel-component/-/aframe-colorwheel-component-1.2.1.tgz"
+  "version" "1.2.1"
+  dependencies:
+    "lodash.difference" "^4.5.0"
+
 "aframe-mouse-cursor-component@^0.5.3":
   "integrity" "sha512-TfYY2aWMWai3M9ZPUUO3D5nQzjtlKfk/aMUqLEY0htfrUazBpR53keK923lM2RQJMVptrVUtO+pmNRJDQL9sPg=="
   "resolved" "https://registry.npmjs.org/aframe-mouse-cursor-component/-/aframe-mouse-cursor-component-0.5.3.tgz"
@@ -4917,6 +4924,11 @@
   "integrity" "sha1-9HGh2khr5g9quVXRcRVSPdHSVdU="
   "resolved" "https://registry.npmjs.org/lodash.cond/-/lodash.cond-4.5.2.tgz"
   "version" "4.5.2"
+
+"lodash.difference@^4.5.0":
+  "integrity" "sha1-nMtOUF1Ia5FlE0V3KIWi3yf9AXw="
+  "resolved" "https://registry.npmjs.org/lodash.difference/-/lodash.difference-4.5.0.tgz"
+  "version" "4.5.0"
 
 "lodash.escape@^3.0.0":
   "integrity" "sha1-mV7g3BjBtIzJLv+ucaEKq1tIdpg="
