@@ -56,6 +56,11 @@
   dependencies:
     "animejs" "^1.1.0"
 
+"aframe-button-controls@^1.1.0":
+  "integrity" "sha512-6qUCB/RVjnAdYpN/4FnxFQ7WESD4ecdfpsm8RBa0LQjtBxeyrO4mq4+OTKRzD4ehJLwg+zHYYcPgf5WKTgAcWw=="
+  "resolved" "https://registry.npmjs.org/aframe-button-controls/-/aframe-button-controls-1.1.0.tgz"
+  "version" "1.1.0"
+
 "aframe-click-drag-component@^3.0.1":
   "integrity" "sha1-zSUQk3EAxG7YfCMgUZEx7bnUw8c="
   "resolved" "https://registry.npmjs.org/aframe-click-drag-component/-/aframe-click-drag-component-3.0.1.tgz"
