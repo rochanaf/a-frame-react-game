@@ -7,9 +7,12 @@ constants.AFRAME.registerComponent('score-counter', {
       var score = document.getElementById("score");
     
       el.sceneEl.addEventListener('collided', function(ev, target){
-          console.log("collided");
           scoreNumber++;
           score.setAttribute('text', {value:'Score: '+scoreNumber});
-      });                                 
+      }); 
+      el.sceneEl.addEventListener('collided', function(ev, target){
+        scoreNumber= 0;
+        score.setAttribute('text', {value:'Score: '+scoreNumber});
+    });                                
       }
   });

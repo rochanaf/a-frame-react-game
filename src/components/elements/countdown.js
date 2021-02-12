@@ -15,10 +15,10 @@ constants.AFRAME.registerComponent('countdown', {
         cancelAnimationFrame(animation);
       });
       el.sceneEl.addEventListener('ballReset', function(ev, target){
-        animation = timer(button,el);
+        animation = resetCountdown(animation,button,el);
       });
-      el.sceneEl.addEventListener('timeoutReset', function(ev, target){
-        animation = timer(button,el);
+      el.sceneEl.addEventListener('timeout', function(ev, target){
+        animation = resetCountdown(animation,button,el);
       });
       }
   });
@@ -26,6 +26,7 @@ constants.AFRAME.registerComponent('countdown', {
 
 function timer(button,el) {
     const endTime = new Date().getSeconds()+constants.TIME;
+    console.log("ENDTIME "+ endTime);
     var animation;
     function getRemainingTime(deadline) {
       const currentTime = new Date().getSeconds();
@@ -37,12 +38,17 @@ function timer(button,el) {
       button.setAttribute('text','value',""+remainingTime)
         
         animation = requestAnimationFrame(animate);
-        if(remainingTime<0) {
+        if(remainingTime===0) {
             cancelAnimationFrame(animation);
             el.emit('timeout');
         }
     }
     requestAnimationFrame(animate);
     return animation;
+  }
+
+  function resetCountdown(animation,button,el) {
+    cancelAnimationFrame(animation);
+    timer(button,el);
   }
  

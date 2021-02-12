@@ -7,16 +7,24 @@ constants.AFRAME.registerComponent('moves-counter', {
       var moves = document.getElementById("movesNumber");
     
       el.sceneEl.addEventListener('ballReset', function(ev, target){
+            emitGameOver(movesLeft,el)
             movesLeft--;
             moves.setAttribute('text', {value:'Moves: '+movesLeft});
       });    
       el.sceneEl.addEventListener('timeout', function(ev, target){
+        emitGameOver(movesLeft,el)
         movesLeft--;
         moves.setAttribute('text', {value:'Moves: '+movesLeft});
     });
+    el.sceneEl.addEventListener('gameover', function(ev, target){
+        movesLeft=10;
+    });                     
+      }
+  });
+
+  function emitGameOver(movesLeft,el) {
     if(movesLeft===0) {
         console.log("gameover");
         el.emit("gameover");
-    }                           
-      }
-  });
+    }  
+  }
