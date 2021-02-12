@@ -17,6 +17,9 @@ constants.AFRAME.registerComponent('countdown', {
       el.sceneEl.addEventListener('ballReset', function(ev, target){
         animation = timer(button,el);
       });
+      el.sceneEl.addEventListener('timeoutReset', function(ev, target){
+        animation = timer(button,el);
+      });
       }
   });
 
@@ -34,9 +37,9 @@ function timer(button,el) {
       button.setAttribute('text','value',""+remainingTime)
         
         animation = requestAnimationFrame(animate);
-        if(remainingTime===0) {
+        if(remainingTime<0) {
             cancelAnimationFrame(animation);
-            el.emit('timeout')
+            el.emit('timeout');
         }
     }
     requestAnimationFrame(animate);
