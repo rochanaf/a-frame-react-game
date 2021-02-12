@@ -15,18 +15,17 @@ constants.AFRAME.registerComponent('countdown', {
         cancelAnimationFrame(animation);
       });
       el.sceneEl.addEventListener('ballReset', function(ev, target){
-        animation = resetCountdown(animation,button,el);
+        animation = timer(button,el);
       });
-      el.sceneEl.addEventListener('timeout', function(ev, target){
-        animation = resetCountdown(animation,button,el);
-      });
-      }
+    //   el.sceneEl.addEventListener('timeoutreset', function(ev, target){
+    //     animation = resetCountdown(animation,button,el);
+    //   });
+       }
   });
 
 
 function timer(button,el) {
     const endTime = new Date().getSeconds()+constants.TIME;
-    console.log("ENDTIME "+ endTime);
     var animation;
     function getRemainingTime(deadline) {
       const currentTime = new Date().getSeconds();
@@ -39,8 +38,10 @@ function timer(button,el) {
         
         animation = requestAnimationFrame(animate);
         if(remainingTime===0) {
-            cancelAnimationFrame(animation);
-            el.emit('timeout');
+            //Note: this emit causes the moves to drop faster
+            //TODO: reduce moves when countdown is over
+            // el.emit('timeout');
+            resetCountdown(animation,button,el);
         }
     }
     requestAnimationFrame(animate);

@@ -7,12 +7,12 @@ constants.AFRAME.registerComponent('moves-counter', {
       var moves = document.getElementById("movesNumber");
     
       el.sceneEl.addEventListener('ballReset', function(ev, target){
-            emitGameOver(movesLeft,el)
+            emitGameOver(movesLeft,el);
             movesLeft--;
             moves.setAttribute('text', {value:'Moves: '+movesLeft});
       });    
       el.sceneEl.addEventListener('timeout', function(ev, target){
-        emitGameOver(movesLeft,el)
+        emitGameOver(movesLeft,el);
         movesLeft--;
         moves.setAttribute('text', {value:'Moves: '+movesLeft});
     });

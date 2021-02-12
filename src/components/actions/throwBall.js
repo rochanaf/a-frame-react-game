@@ -24,7 +24,7 @@ constants.AFRAME.registerComponent('throw-ball', {
       // el.sceneEl.addEventListener('timeout', function(ev, target){
       //   // TODO disable mouseclick and mouseup so ball is back to initial pos 
       //   resetBall(el);
-      //   el.emit('timeoutReset');
+      //   emitTimeoutReset(el);
       //   //TODO problem if too many timeouts
       // });
 }});
@@ -49,4 +49,11 @@ function emitEvent(el) {
     el.emit('ballReset');
   }
   setTimeout(emitEvent,constants.TIMEOUT);
+}
+
+function emitTimeoutReset(el) {
+  const emitTimeoutReset = () => {
+    el.emit('timeoutreset');
+  }
+  setTimeout(emitTimeoutReset,constants.TIMEOUT);
 }
