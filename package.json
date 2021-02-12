@@ -1,5 +1,6 @@
 {
-  "name": "aframe-react-boilerplate",
+  "homepage": "http://rochanaf.github.io/aframe-react-game",
+  "name": "aframe-react-game",
   "version": "3.0.1",
   "description": "Boilerplate for building virtual reality experiences with A-Frame and React.",
   "dependencies": {
@@ -22,11 +23,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "publish": "npm run build && gh-pages -d build"
+    "publish": "npm run build && gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ngokevin/aframe-react-boilerplate.git"
+    "url": "git+https://github.com/rochanaf/aframe-react-game.git"
   },
   "keywords": [
     "aframe",
