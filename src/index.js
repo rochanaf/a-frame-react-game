@@ -12,6 +12,7 @@ require("./components/actions/throwBall.js");
 require("./components/actions/collision.js");
 require("./components/actions/scoreCount.js");
 require("./components/actions/movesCount.js");
+require("./components/actions/endGame.js");
 
 require("./components/elements/target.js");
 require("./components/elements/score.js");
@@ -35,7 +36,7 @@ class App extends React.Component {
           <img id="playButton" src="assets/play.jpg" alt="play"/>
         </a-assets>
 
-        <Entity id ="startButton" cursor-listener start-game
+        <Entity id ="startButton" cursor-listener start-game end-game
                 geometry={{primitive: 'plane', width:1, height:1}}
                 material={{color:'black',opacity: 0}}
                 position={{x: 0, y: 2, z: -3}}
