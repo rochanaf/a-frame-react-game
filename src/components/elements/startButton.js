@@ -11,6 +11,7 @@ constants.AFRAME.registerComponent('start-game', {
         //TODO: find alternative without loading useless components
         showSceneElements();
         hideButton();
+        el.emit('gameStarted');
     });                            
       }
   });
@@ -19,6 +20,7 @@ constants.AFRAME.registerComponent('start-game', {
       document.getElementById('sphere').setAttribute('visible','true');
       document.getElementById('target').setAttribute('visible','true');
       document.getElementById('score').setAttribute('visible','true');
+      document.getElementById('countdown').setAttribute('visible','true');
   }
 
   function hideButton() {

@@ -15,6 +15,7 @@ require("./components/actions/scoreCount.js");
 require("./components/elements/target.js");
 require("./components/elements/score.js");
 require("./components/elements/startButton.js");
+require("./components/elements/countdown.js");
 
 // require('aframe-physics-system');
 
@@ -36,6 +37,12 @@ class App extends React.Component {
                 geometry={{primitive: 'plane', width:1, height:1}}
                 material={{color:'black',opacity: 0}}
                 position={{x: 0, y: 2, z: -3}}
+                //TODO: custom font not working
+                text={"font: mozillavr"} />
+        <Entity id ="countdown" countdown
+                geometry={{primitive: 'plane', width:1, height:1}}
+                material={{color:'black',opacity: 0}}
+                position={{x: 0, y: 4, z: -3}}
                 //TODO: custom font not working
                 text={"font: mozillavr"} />
         <Entity primitive="a-plane" color="green" rotation="-90 0 0" height="100" width="100"/>

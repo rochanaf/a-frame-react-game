@@ -23,3 +23,7 @@ export const BALLMULTIPLIER = TARGETMULTIPLIER*2;
 export const INITIALSCOREPOSITIONX= 0;
 export const INITIALSCOREPOSITIONY= 1;
 export const INITIALSCOREPOSITIONZ= -1;
+
+// COUNTDOWN
+export const TIMER= 5000;
+export const TIME= 5;
