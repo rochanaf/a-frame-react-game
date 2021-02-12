@@ -4,7 +4,7 @@ constants.AFRAME.registerComponent('start-game', {
     init: function () {
       var el = this.el;
       var button = document.getElementById("startButton");
-      button.setAttribute('text', {value:'Start game', align:'center', width:'5px', color:'black'});
+      button.setAttribute('text', {value:'START', align:'center', width:'5px', color:'black'});
     
       el.addEventListener('click', function(ev, target){
         console.log("buttonup");
