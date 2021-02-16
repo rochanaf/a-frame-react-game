@@ -15,7 +15,6 @@ constants.AFRAME.registerComponent('target', {
           });
         }
         el.sceneEl.addEventListener('ballReset', function(ev, target){
-          console.log("reset");
           animate()
         });
         animate()  

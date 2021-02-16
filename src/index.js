@@ -48,7 +48,7 @@ class App extends React.Component {
                 position={{x: 0, y: 4, z: -3}}
                 text={"font: mozillavr"} />
         <Entity id ="movesNumber" moves moves-counter
-                position={{x: 1, y: 4, z: -3}}
+                position={{x: 0.5, y: 4, z: -3}}
                 text={"font: mozillavr"} />
         <Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
         <Entity primitive="a-light" type="ambient" color="#445451"/>

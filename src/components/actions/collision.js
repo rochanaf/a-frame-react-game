@@ -43,8 +43,6 @@ function isCollisionAxis(targetPositionAxis,ballPositionAxis,axis) {
   else if (axis==='y') targetLength = constants.TARGETHEIGHT;
 
   var targetInterval = findTargetInterval(targetLength,targetPositionAxis);
-  console.log(targetInterval);
-  console.log(ballPositionAxis);
   //TODO: ballInterval has to be in target interval (if not, score is <)
   var ballInterval = findBallInterval(ballPositionAxis);
   return(ballPositionAxis>= targetInterval[0] && ballPositionAxis<= targetInterval[1]);

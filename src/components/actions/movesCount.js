@@ -5,18 +5,14 @@ constants.AFRAME.registerComponent('moves-counter', {
       var el = this.el;
       var movesLeft = 10;
       var moves = document.getElementById("movesNumber");
-    
-      el.sceneEl.addEventListener('ballReset', function(ev, target){
-            emitGameOver(movesLeft,el);
-            movesLeft--;
-            moves.setAttribute('text', {value:'Moves: '+movesLeft});
-      });    
+     
       el.sceneEl.addEventListener('timeout', function(ev, target){
         emitGameOver(movesLeft,el);
         movesLeft--;
+        console.log("--move reset");
         moves.setAttribute('text', {value:'Moves: '+movesLeft});
     });
-    el.sceneEl.addEventListener('gameover', function(ev, target){
+    el.sceneEl.addEventListener('gameStarted', function(ev, target){
         movesLeft=10;
     });                     
       }

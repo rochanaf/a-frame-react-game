@@ -5,28 +5,31 @@ constants.AFRAME.registerComponent('throw-ball', {
 
   init: function() {
       var el = this.el;
+      var count =0;
 
-      el.addEventListener('mousedown', function(ev, target){
-        console.log("mousedown");
-      });
       el.addEventListener('dragend', function(ev, target){
-        // TODO: find alternative to stop firing event multiple times
+        ev.preventDefault();
         var isChosenEvent = (ev.detail.clientX!==undefined && ev.detail.clientY!==undefined) ;
         if (isChosenEvent) {
-          el.emit('ballThrown');
-          updatePosition(el);
-              // TODO disable mouseclick after ball is thrown and enable after reset
-          resetBall(el);
-          emitEvent(el);
-        }
+          count++;
+          if(count!==2){
+            el.emit('ballThrown');
+            console.log('ball was thrown');
+            updatePosition(el);
+            resetBall(el);
+            emitEvent(el);
+          } 
+          else count =0;
+        } 
+        
       });
+      
       //TODO reset ball and disable mouseclick if timeout
-      // el.sceneEl.addEventListener('timeout', function(ev, target){
-      //   // TODO disable mouseclick and mouseup so ball is back to initial pos 
-      //   resetBall(el);
-      //   emitTimeoutReset(el);
-      //   //TODO problem if too many timeouts
-      // });
+      el.sceneEl.addEventListener('timeout', function(ev, target){
+        // TODO disable mouseclick and mouseup so ball is back to initial pos 
+        console.log("timeout heard throwball");
+        resetBallTimeout(el);
+      });
 }});
 
 function updatePosition(el) {
@@ -47,13 +50,15 @@ function resetBall(el) {
 function emitEvent(el) {
   const emitEvent = () => {
     el.emit('ballReset');
+    console.log('ball reset');
   }
   setTimeout(emitEvent,constants.TIMEOUT);
 }
 
-function emitTimeoutReset(el) {
-  const emitTimeoutReset = () => {
-    el.emit('timeoutreset');
-  }
-  setTimeout(emitTimeoutReset,constants.TIMEOUT);
+function resetBallTimeout(el) {
+  el.object3D.position.set(constants.INITIALBALLPOSITIONX,
+                            constants.INITIALBALLPOSITIONY,
+                            constants.INITIALBALLPOSITIONZ
+                            );
+  
 }

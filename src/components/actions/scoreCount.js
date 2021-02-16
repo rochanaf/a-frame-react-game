@@ -15,9 +15,9 @@ constants.AFRAME.registerComponent('score-counter', {
           scoreNumber++;
           score.setAttribute('text', {value:'Score: '+scoreNumber});
       }); 
-      el.sceneEl.addEventListener('gameover', function(ev, target){
-        scoreNumber= 0;
-        score.setAttribute('text', {value:'Score: '+scoreNumber});
-    });                                
+    //   el.sceneEl.addEventListener('gameover', function(ev, target){
+    //     scoreNumber= 0;
+    //     score.setAttribute('text', {value:'Score: '+scoreNumber});
+    // });                                
       }
   });
