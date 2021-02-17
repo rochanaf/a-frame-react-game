@@ -26,4 +26,4 @@ export const INITIALSCOREPOSITIONZ= -1;
 
 // COUNTDOWN
 export const TIMER= 5000;
-export const TIME= 5;
+export const TIME= 6;

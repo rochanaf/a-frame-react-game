@@ -18,6 +18,7 @@ constants.AFRAME.registerComponent('moves-counter', {
   });
     el.sceneEl.addEventListener('gameStarted', function(ev, target){
         movesLeft=10;
+        console.log(movesLeft);
         moves.setAttribute('text', {value:'Moves: '+movesLeft});
     });                     
       }

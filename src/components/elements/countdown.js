@@ -6,8 +6,6 @@ constants.AFRAME.registerComponent('countdown', {
     init: function () {
       var el = this.el;
       var button = document.getElementById("countdown");  
-      var animationID;
-      var timeLeft = constants.TIME;
       var timer = new Timer();
 
       timer.on('tick', function(ms){
@@ -21,7 +19,7 @@ constants.AFRAME.registerComponent('countdown', {
       button.setAttribute('visible','false'); 
       button.setAttribute('text', {align:'center', width:'10px', color:'black'});
       el.sceneEl.addEventListener('gameStarted', function(ev, target){
-        timer.start(constants.TIME+1);
+        timer.start(constants.TIME);
       });
   
       el.sceneEl.addEventListener('ballThrown', function(ev, target){
@@ -29,10 +27,10 @@ constants.AFRAME.registerComponent('countdown', {
       });
       el.sceneEl.addEventListener('ballReset', function(ev, target){
         timer.stop();
-        timer.start(constants.TIME+1);
+        timer.start(constants.TIME);
       });
       el.sceneEl.addEventListener('timeout', function(ev, target){
-        timer.start(constants.TIME+1);
+        timer.start(constants.TIME);
       });
       el.sceneEl.addEventListener('gameover', function(ev, target){
         timer.stop();
