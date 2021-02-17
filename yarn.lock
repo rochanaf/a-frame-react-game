@@ -5365,6 +5365,11 @@
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz"
   "version" "1.2.0"
 
+"mitt@^2.1.0":
+  "integrity" "sha512-ILj2TpLiysu2wkBbWjAmww7TkZb65aiQO+DkVdUTBpBXq+MHYiETENkKFMtsJZX1Lf4pe4QOrTSjIfUwN5lRdg=="
+  "resolved" "https://registry.npmjs.org/mitt/-/mitt-2.1.0.tgz"
+  "version" "2.1.0"
+
 "mkdirp@^0.5.0", "mkdirp@^0.5.1", "mkdirp@~0.5.0", "mkdirp@~0.5.1":
   "integrity" "sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM="
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz"
@@ -7873,6 +7878,13 @@
   "version" "2.0.2"
   dependencies:
     "setimmediate" "^1.0.4"
+
+"tiny-timer@^1.6.0":
+  "integrity" "sha512-2ciJ4w+0EKDRmVihzj8aBxDw2da9L88aTwslhf1Clphwt2NV927N7xH90tqz/M02lziboDkx+IypnnWqzjnv9g=="
+  "resolved" "https://registry.npmjs.org/tiny-timer/-/tiny-timer-1.6.0.tgz"
+  "version" "1.6.0"
+  dependencies:
+    "mitt" "^2.1.0"
 
 "tmatch@^2.0.1":
   "integrity" "sha1-DFYkbzPzDaG409colauvFmYPOM8="

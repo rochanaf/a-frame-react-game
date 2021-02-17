@@ -1,5 +1,5 @@
 import * as constants from '../../constants.js';
-
+const Timer = require('tiny-timer');
 
 //TODO refactor coutdown
 constants.AFRAME.registerComponent('countdown', {
@@ -7,41 +7,33 @@ constants.AFRAME.registerComponent('countdown', {
       var el = this.el;
       var button = document.getElementById("countdown");  
       var animationID;
-      var timeLeft = 6;
-      
-    button.setAttribute('text','value',""+timeLeft);
-    function animate() {
-      const setTime = () => {
-        timeLeft--;
-      button.setAttribute('text','value',""+timeLeft);
-      if(timeLeft>0) animationID = requestAnimationFrame(animate);
-      else {
-        timeLeft=6;
-        el.emit('timeout');}
-    }
-      setTimeout(setTime,constants.TIMEOUT);
-      
-    }
-    // if(!stopTimer) {
-    //   animation =requestAnimationFrame(animate);
-    //   return animation;
-    // }
+      var timeLeft = constants.TIME;
+      var timer = new Timer();
+
+      timer.on('tick', (ms) => 
+      button.setAttribute('text','value',""+ Math.ceil(ms/1000)));
+      timer.on('done', () => el.emit('timeout'))
+
       button.setAttribute('visible','false'); 
       button.setAttribute('text', {align:'center', width:'10px', color:'black'});
       el.sceneEl.addEventListener('gameStarted', function(ev, target){
-        animationID = requestAnimationFrame(animate);
-        console.log("First id "+animationID);
+        button.setAttribute('text','value',""+timeLeft);
+        timer.start(constants.TIMER);
       });
   
       el.sceneEl.addEventListener('ballThrown', function(ev, target){
-        console.log(animationID);
-        timeLeft=1;
-        cancelAnimationFrame("CANCEL: "+ animationID);
+        timer.pause();
+      });
+      el.sceneEl.addEventListener('ballReset', function(ev, target){
+        timer.stop();
+        timer.start(constants.TIMER);
       });
       el.sceneEl.addEventListener('timeout', function(ev, target){
-        console.log("timeout");
-        animationID= requestAnimationFrame(animate);
-        console.log("TIMEOUT ID "+animationID);
+        console.log('timeout');
+        timer.start(constants.TIMER);
+      });
+      el.sceneEl.addEventListener('gameover', function(ev, target){
+        timer.stop();
       });
        }
   });
