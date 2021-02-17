@@ -1,5 +1,5 @@
 import * as constants from '../../constants.js';
-const Timer = require('tiny-timer');
+import Timer from 'timer.js';
 
 //TODO refactor coutdown
 constants.AFRAME.registerComponent('countdown', {
@@ -10,15 +10,18 @@ constants.AFRAME.registerComponent('countdown', {
       var timeLeft = constants.TIME;
       var timer = new Timer();
 
-      timer.on('tick', (ms) => 
-      button.setAttribute('text','value',""+ Math.ceil(ms/1000)));
-      timer.on('done', () => el.emit('timeout'))
+      timer.on('tick', function(ms){
+        button.setAttribute('text','value',""+(Math.ceil(ms/1000)))
+      })
+      timer.on('end', function(){
+        button.setAttribute('text','value',""+0)
+        el.emit('timeout');
+      } )
 
       button.setAttribute('visible','false'); 
       button.setAttribute('text', {align:'center', width:'10px', color:'black'});
       el.sceneEl.addEventListener('gameStarted', function(ev, target){
-        button.setAttribute('text','value',""+timeLeft);
-        timer.start(constants.TIMER);
+        timer.start(constants.TIME+1);
       });
   
       el.sceneEl.addEventListener('ballThrown', function(ev, target){
@@ -26,11 +29,10 @@ constants.AFRAME.registerComponent('countdown', {
       });
       el.sceneEl.addEventListener('ballReset', function(ev, target){
         timer.stop();
-        timer.start(constants.TIMER);
+        timer.start(constants.TIME+1);
       });
       el.sceneEl.addEventListener('timeout', function(ev, target){
-        console.log('timeout');
-        timer.start(constants.TIMER);
+        timer.start(constants.TIME+1);
       });
       el.sceneEl.addEventListener('gameover', function(ev, target){
         timer.stop();

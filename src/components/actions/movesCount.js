@@ -18,6 +18,7 @@ constants.AFRAME.registerComponent('moves-counter', {
   });
     el.sceneEl.addEventListener('gameStarted', function(ev, target){
         movesLeft=10;
+        moves.setAttribute('text', {value:'Moves: '+movesLeft});
     });                     
       }
   });
@@ -26,6 +27,5 @@ constants.AFRAME.registerComponent('moves-counter', {
     if(movesLeft===1) {
         console.log("gameover");
         el.emit("gameover");
-        movesLeft=10;
     }  
   }
